@@ -1,9 +1,8 @@
-import React from "react";
 import TechNews from "./components/TechNews";
 
 const App = () => {
   return (
-    <div>
+    <div className="container">
       <TechNews />
     </div>
   );

@@ -1,9 +1,9 @@
-import TechNews from "./components/TechNews";
+import News from "./components/News";
 
 const App = () => {
   return (
     <div className="container">
-      <TechNews />
+      <News />
     </div>
   );
 };

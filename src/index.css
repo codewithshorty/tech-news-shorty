@@ -105,6 +105,7 @@ html {
 .content .categories-box .categories .list .list-item {
   font-size: 2rem;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 .content .categories-box .categories .list .list-item a {
@@ -138,7 +139,7 @@ html {
 
 .content .news-box .latest-news .main-news {
   position: relative;
-  padding: 1%;
+  padding: 0 1%;
 }
 
 .content .news-box .latest-news .main-news h2 {
@@ -155,7 +156,8 @@ html {
 }
 
 .content .news-box .latest-news .main-news img {
-  width: 100%;
+  width: 68rem;
+  height: 35rem;
   border-radius: 2rem;
 }
 

@@ -1,13 +1,26 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const categories = [
+  "general",
+  "world",
+  "nation",
+  "business",
+  "technology",
+  "entertainment",
+  "sports",
+  "science",
+  "health",
+];
+
 const News = () => {
   const [mainNews, setMainNews] = useState(null);
   const [news, setNews] = useState([]);
+  const [pickedCategory, setPickedCategory] = useState("general");
 
   useEffect(() => {
     const fetchNews = async () => {
-      const apiURL = `https://gnews.io/api/v4/top-headlines?category=technology&lang=en&apikey=603cbcf4565359b2564693585aa346e1`;
+      const apiURL = `https://gnews.io/api/v4/top-headlines?category=${pickedCategory}&lang=en&apikey=603cbcf4565359b2564693585aa346e1`;
 
       const responseNews = await axios.get(apiURL);
 
@@ -21,7 +34,12 @@ const News = () => {
       console.log(restNews);
     };
     fetchNews();
-  }, []);
+  }, [pickedCategory]);
+
+  const handleSelectCategories = (e, category) => {
+    e.preventDefault();
+    setPickedCategory(category);
+  };
 
   return (
     <div className="news-app">
@@ -40,24 +58,19 @@ const News = () => {
           </div>
           <div className="categories">
             <ul className="list">
-              <li className="list-item">
-                <a href="">Robots</a>
-              </li>
-              <li className="list-item">
-                <a href="">Internet</a>
-              </li>
-              <li className="list-item">
-                <a href="">Automotive</a>
-              </li>
-              <li className="list-item">
-                <a href="">Games</a>
-              </li>
-              <li className="list-item">
-                <a href="">AI</a>
-              </li>
-              <li className="list-item">
-                <a href="">Medical</a>
-              </li>
+              {categories.map((category) => {
+                return (
+                  <li key={category} className="list-item">
+                    <a
+                      key={category}
+                      onClick={(e) => handleSelectCategories(e, category)}
+                      href=""
+                    >
+                      {category}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

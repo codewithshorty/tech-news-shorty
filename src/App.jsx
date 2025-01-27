@@ -1,11 +1,7 @@
 import News from "./components/News";
 
 const App = () => {
-  return (
-    <div className="container">
-      <News />
-    </div>
-  );
+  return <News />;
 };
 
 export default App;

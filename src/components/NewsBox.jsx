@@ -5,7 +5,6 @@ const NewsBox = ({ selectedNewsArticle, showNewsBox, onCloseNewsBox }) => {
     return null;
   }
 
-  console.log(selectedNewsArticle);
   return (
     <div className="news-modal-box">
       <div className="news-modal-content">

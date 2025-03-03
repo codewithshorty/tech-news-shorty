@@ -33,8 +33,6 @@ const News = () => {
 
       setMainNews(mainNewsFetched);
       setNews(restNews);
-      // console.log(mainNews);
-      console.log(restNews);
     };
     fetchNews();
   }, [pickedCategory]);

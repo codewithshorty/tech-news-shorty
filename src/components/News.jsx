@@ -13,6 +13,7 @@ const categories = [
   "science",
   "health",
 ];
+console.log(categories);
 
 const News = () => {
   const [mainNews, setMainNews] = useState(null);
